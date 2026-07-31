@@ -1,5 +1,7 @@
 ﻿using System;
-
+using System.ComponentModel.DataAnnotations.Schema;
+using System.Data;
+using System.Xml.Serialization;
 class formarter {
     public static String spaces(int i) {
         String s = "";
@@ -52,9 +54,16 @@ class strings {
     static void Main()
     {
         String[] s = "x86,8086\nx86,80186\nx86,80286\nx86,80386\nx86,80486".Split("\n");
+        String ss = "";
+        String f = "";
         Console.BackgroundColor= ConsoleColor.White;
         Console.ForegroundColor= ConsoleColor.Black;
         Console.Clear();
+        Console.WriteLine("give me a file .csv to read");
+        ss = Console.ReadLine();
+        Console.Clear();
+        f= File.ReadAllText(ss);
+        s = f.Split("\r\n");
         formarter.tables(s,10,10);
                 
     }
