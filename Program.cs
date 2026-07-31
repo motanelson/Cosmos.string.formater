@@ -1,7 +1,4 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
-using System.Xml.Serialization;
 class formarter {
     public static String spaces(int i) {
         String s = "";
@@ -47,13 +44,19 @@ class formarter {
             counter++;
         }
     }
+    public static void files(String s,int backs, int nexts)
+    {
+        String[] ss;
+        ss = s.Split("\r\n");
+        tables(ss, backs, nexts);
+    }
 }
     
 
 class strings {
     static void Main()
     {
-        String[] s = "x86,8086\nx86,80186\nx86,80286\nx86,80386\nx86,80486".Split("\n");
+        String[] s ;
         String ss = "";
         String f = "";
         Console.BackgroundColor= ConsoleColor.White;
@@ -63,8 +66,8 @@ class strings {
         ss = Console.ReadLine();
         Console.Clear();
         f= File.ReadAllText(ss);
-        s = f.Split("\r\n");
-        formarter.tables(s,10,10);
+        
+        formarter.files(f,10,1);
                 
     }
 }
