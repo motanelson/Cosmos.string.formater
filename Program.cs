@@ -1,7 +1,5 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations.Schema;
-using System.Data;
-using System.Xml.Serialization;
+
 class formarter {
     public static String spaces(int i) {
         String s = "";
